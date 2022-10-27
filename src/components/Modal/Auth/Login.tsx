@@ -1,8 +1,18 @@
-import { Button, Input, chakra, Heading, Flex, Text } from "@chakra-ui/react";
+import {
+  Button,
+  Input,
+  chakra,
+  Heading,
+  Flex,
+  Text,
+  Divider,
+  Box,
+  Center,
+} from "@chakra-ui/react";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useSetRecoilState } from "recoil";
-import { authModalState } from "../../../atoms/AuthModalAtom";
+import { authModalState } from "../../../atoms/authModalAtom";
 import OAuthButtons from "./OAuthButtons";
 
 type LoginProps = {};
@@ -41,6 +51,12 @@ const Login: React.FC<LoginProps> = () => {
         .
       </chakra.p>
       <OAuthButtons />
+
+      {/* <Divider orientation="horizontal" colorScheme="facebook" /> */}
+      <Center m="25px 0" color="gray.400">
+        OR
+      </Center>
+
       <Input
         name="text"
         placeholder="Username"
@@ -77,7 +93,34 @@ const Login: React.FC<LoginProps> = () => {
           boderColor: "gray.300",
         }}
       />
-      <chakra.p fontSize="12px">Forget your username or password ?</chakra.p>
+
+      <Flex justifyContent="flex-start" mt={4}>
+        <Text fontSize="12px" mr={1}>
+          Forget your
+        </Text>
+
+        <Text
+          fontWeight={700}
+          color="blue.500"
+          cursor="pointer"
+          fontSize="12px"
+          mr={1}
+        >
+          username
+        </Text>
+
+        <Text fontSize="12px">or</Text>
+
+        <Text
+          fontSize="12px"
+          color="blue.500"
+          cursor="pointer"
+          fontWeight={700}
+        >
+          password ?
+        </Text>
+      </Flex>
+
       <Button
         _hover={{
           bg: "orange.600",
@@ -90,7 +133,7 @@ const Login: React.FC<LoginProps> = () => {
         Log In
       </Button>
 
-      <Flex justifyContent="center" mt={4}>
+      <Flex justifyContent="flex-start" height={20} mt={4}>
         <Text fontSize="12px" mr={1}>
           New to Reddit?
         </Text>
