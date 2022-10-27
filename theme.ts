@@ -4,6 +4,7 @@ import "@fontsource/open-sans/300.css";
 import "@fontsource/open-sans/400.css";
 import "@fontsource/open-sans/700.css";
 import { Button } from "./src/chakra/button";
+import { modalTheme } from "./src/chakra/modal";
 
 // 2. Call `extendTheme` and pass your custom values
 export const customTheme = extendTheme({
@@ -26,5 +27,6 @@ export const customTheme = extendTheme({
   },
   components: {
     Button,
+    Modal: modalTheme,
   },
 });
