@@ -1,6 +1,5 @@
+import { Button, Flex, Image } from "@chakra-ui/react";
 import React from "react";
-import { Button, Flex } from "@chakra-ui/react";
-import { FaGoogle, FaApple } from "react-icons/fa";
 
 type OAuthButtonsProps = {};
 
@@ -12,15 +11,37 @@ const OAuthButtons: React.FC = () => {
         border="1px solid gray"
         color="gray.800"
         fontWeight="700"
-        leftIcon={<FaGoogle />}
+        // leftIcon={<FaGoogle />}
         mb={3}
         _hover={{
           bg: "blue.50",
         }}
       >
+        <Image
+          src="/images/googlelogo.jpg"
+          alt="googelogo"
+          height="20px"
+          mr={4}
+        />
         Continue With Google
       </Button>
-      <Button leftIcon={<FaApple />} mb={8}>
+      <Button
+        // leftIcon={<FaApple />}
+        // mb={8}
+        bg="white"
+        border="1px solid gray"
+        color="gray.800"
+        fontWeight="700"
+        _hover={{
+          bg: "blue.50",
+        }}
+      >
+        <Image
+          src="/images/applelogo.png"
+          alt="applelogo"
+          height="20px"
+          mr={4}
+        />
         Continue With Apple
       </Button>
     </Flex>
